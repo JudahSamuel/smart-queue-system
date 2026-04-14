@@ -1,24 +1,29 @@
 # Smart Queue Management System 🚀
 
 ## 📌 Problem
-Long waiting queues in hospitals, canteens, and banks cause frustration and inefficiency.
+Long waiting queues in hospitals, canteens, and banks lead to inefficiency and poor user experience.
 
-## 💡 Solution
-A digital queue system where users can join queues using QR codes and track their position in real-time.
+## 💡 Proposed Solution
+A digital queue system where users can scan a QR code to join a queue and track their position in real-time.
 
-## ⚙️ Features
-- Live queue tracking  
-- Estimated waiting time  
-- Token system  
-- Priority handling  
+## ⚙️ Planned Features
+- Virtual token system  
+- Real-time queue tracking  
+- Estimated waiting time prediction  
+- Priority access for emergency cases  
+- Notification system  
 
-## 🛠 Tech Stack
-- Frontend: HTML, CSS, JS / React  
+## 🛠 Proposed Tech Stack
+- Frontend: React / HTML-CSS-JS  
 - Backend: Flask / Node.js  
+- Database: Firebase / MongoDB  
 
-## 📸 Demo
-(Add screenshots here)
+## 🎯 Why This Project?
+This solution addresses a real-world problem and improves efficiency in crowded environments. It is scalable and can be adapted to multiple industries.
 
-## 🚀 Future Scope
+## 🚀 Status
+🟡 Planned – To be developed during hackathon
+
+## 📌 Future Scope
 - AI-based wait time prediction  
-- SMS/WhatsApp notifications  
+- Mobile app integration  

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Queue System</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      color: #38bdf8;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #38bdf8;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    .token {
+      font-size: 40px;
+      margin: 20px 0;
+      color: #22c55e;
+    }
+
+    .status {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    .time {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #facc15;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Smart Queue System 🚀</h1>
+
+    <p>Click below to join the queue</p>
+
+    <button onclick="joinQueue()">Join Queue</button>
+
+    <div class="token" id="token">--</div>
+
+    <div class="status" id="status">Not in queue</div>
+
+    <!-- ✅ UPGRADE: Estimated Time -->
+    <div class="time" id="time"></div>
+
+    <button onclick="nextPerson()">Next Person</button>
+  </div>
+
+  <script>
+    let currentToken = 0;
+    let servingToken = 0;
+    let userToken = null;
+
+    function joinQueue() {
+      currentToken++;
+      userToken = currentToken;
+
+      document.getElementById("token").innerText = "Token #" + userToken;
+      updateStatus();
+    }
+
+    function nextPerson() {
+      if (servingToken < currentToken) {
+        servingToken++;
+        updateStatus();
+      }
+    }
+
+    function updateStatus() {
+      if (userToken === null) {
+        document.getElementById("status").innerText = "Not in queue";
+        document.getElementById("time").innerText = "";
+      } 
+      else if (userToken === servingToken) {
+        document.getElementById("status").innerText = "👉 It's your turn!";
+        document.getElementById("time").innerText = "Please proceed now";
+      } 
+      else {
+        let wait = userToken - servingToken;
+        document.getElementById("status").innerText =
+          "People ahead: " + wait;
+
+        // ✅ Estimated time logic (2 mins per person)
+        document.getElementById("time").innerText =
+          "Estimated wait: " + (wait * 2) + " mins";
+      }
+    }
+  </script>
+
+</body>
+</html>

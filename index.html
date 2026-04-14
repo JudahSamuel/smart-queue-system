@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Smart Queue System</title>
+  <title>Smart Queue AI | Live Demo</title>
+
   <style>
     body {
       font-family: Arial;
@@ -13,16 +14,21 @@
     }
 
     .container {
-      max-width: 400px;
+      max-width: 420px;
       margin: auto;
       background: #1e293b;
-      padding: 20px;
+      padding: 25px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
     h1 {
       color: #38bdf8;
+    }
+
+    h3 {
+      color: #facc15;
+      margin-bottom: 10px;
     }
 
     button {
@@ -57,25 +63,38 @@
       color: #facc15;
     }
 
+    .serving {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #fb7185;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="container">
     <h1>Smart Queue System 🚀</h1>
 
-    <p>Click below to join the queue</p>
+    <!-- REAL WORLD FEEL -->
+    <h3>🏥 Hospital OPD Queue</h3>
+    <p>Scan QR or click below to join the hospital queue</p>
+    <p>🚀 Live demo of digital queue system</p>
 
     <button onclick="joinQueue()">Join Queue</button>
 
     <div class="token" id="token">--</div>
 
+    <div class="serving">
+      Now Serving: <span id="serving">0</span>
+    </div>
+
     <div class="status" id="status">Not in queue</div>
 
-    <!-- ✅ UPGRADE: Estimated Time -->
     <div class="time" id="time"></div>
 
     <button onclick="nextPerson()">Next Person</button>
+    <button onclick="resetQueue()">Reset Queue</button>
   </div>
 
   <script>
@@ -98,7 +117,20 @@
       }
     }
 
+    function resetQueue() {
+      currentToken = 0;
+      servingToken = 0;
+      userToken = null;
+
+      document.getElementById("token").innerText = "--";
+      document.getElementById("status").innerText = "Queue reset";
+      document.getElementById("time").innerText = "";
+      document.getElementById("serving").innerText = "0";
+    }
+
     function updateStatus() {
+      document.getElementById("serving").innerText = servingToken;
+
       if (userToken === null) {
         document.getElementById("status").innerText = "Not in queue";
         document.getElementById("time").innerText = "";
@@ -106,13 +138,16 @@
       else if (userToken === servingToken) {
         document.getElementById("status").innerText = "👉 It's your turn!";
         document.getElementById("time").innerText = "Please proceed now";
+
+        // ALERT FEATURE 🔥
+        alert("It's your turn!");
       } 
       else {
         let wait = userToken - servingToken;
+
         document.getElementById("status").innerText =
           "People ahead: " + wait;
 
-        // ✅ Estimated time logic (2 mins per person)
         document.getElementById("time").innerText =
           "Estimated wait: " + (wait * 2) + " mins";
       }

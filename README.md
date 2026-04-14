@@ -21,6 +21,9 @@ A digital queue system where users can scan a QR code to join a queue and track 
 ## 🎯 Why This Project?
 This solution addresses a real-world problem and improves efficiency in crowded environments. It is scalable and can be adapted to multiple industries.
 
+## 🌐 Live Demo
+👉 [Click here to try the app](https://deft-pegasus-3f4426.netlify.app/)
+
 ## 🚀 Status
 🟡 Planned – To be developed during hackathon
 

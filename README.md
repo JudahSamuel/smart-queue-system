@@ -1,32 +1,22 @@
 # Smart Queue Management System 🚀
 
+🌐 Live Demo: https://deft-pegasus-3f4426.netlify.app/
+
 ## 📌 Problem
-Long waiting queues in hospitals, canteens, and banks lead to inefficiency and poor user experience.
+Long waiting queues cause inefficiency and poor user experience in public places.
 
-## 💡 Proposed Solution
-A digital queue system where users can scan a QR code to join a queue and track their position in real-time.
+## 💡 Solution
+A digital system that allows users to join queues virtually and track their position in real-time.
 
-## ⚙️ Planned Features
-- Virtual token system  
+## ⚙️ Features
+- Token system  
 - Real-time queue tracking  
-- Estimated waiting time prediction  
-- Priority access for emergency cases  
-- Notification system  
+- Estimated waiting time  
+- Serving display  
+- Reset functionality  
 
-## 🛠 Proposed Tech Stack
-- Frontend: React / HTML-CSS-JS  
-- Backend: Flask / Node.js  
-- Database: Firebase / MongoDB  
+## 🛠 Tech Stack
+HTML, CSS, JavaScript  
 
-## 🎯 Why This Project?
-This solution addresses a real-world problem and improves efficiency in crowded environments. It is scalable and can be adapted to multiple industries.
-
-## 🌐 Live Demo
-👉 [Click here to try the app](https://deft-pegasus-3f4426.netlify.app/)
-
-## 🚀 Status
-🟡 Planned – To be developed during hackathon
-
-## 📌 Future Scope
-- AI-based wait time prediction  
-- Mobile app integration  
+## 🎯 Impact
+Reduces physical crowding and improves service efficiency in hospitals, banks, and canteens.

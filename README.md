@@ -1,6 +1,6 @@
 # Smart Queue Management System 🚀
 
-🌐 Live Demo: https://deft-pegasus-3f4426.netlify.app/
+Live Demo: https://deft-pegasus-3f4426.netlify.app/
 
 ## 📌 Problem
 Long waiting queues cause inefficiency and poor user experience in public places.
